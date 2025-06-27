@@ -18,13 +18,13 @@ const PageNotFound = ({ statusCode = 500, title = "INTERNAL SERVER ERROR" }: IPr
                     to={"/"}
                     reloadDocument
                 >
-                    <Button>Home</Button>
+                    <Button type="button">Home</Button>
                 </Link>
                 <Link
                     to={pathname}
                     reloadDocument
                 >
-                    <Button>Refresh</Button>
+                    <Button type="button">Refresh</Button>
                 </Link>
             </div>
         </div>
