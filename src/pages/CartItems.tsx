@@ -55,9 +55,14 @@ const CartItems = () => {
         )
     }
 
+    const totalPrice = productCart.reduce((total, product) => total + product.price * product.quantity, 0);
     return (
         <div className="container mx-auto px-2 mt-10">
             {renderProduct}
+
+            <div className="text-center font-bold text-2xl mx-auto ">
+                <span>Total Price: {totalPrice.toFixed(2)}</span>
+            </div>
         </div>
     );
 };
