@@ -23,7 +23,7 @@ export const CartSlice = createSlice({
         decreaseCartProduct: (state, action: PayloadAction<{ id: number, quantity: number }>) => {
             const { id, quantity } = action.payload;
             const product = state.productCart.find((item) => item.id === id);
-            if(quantity < 1) return
+            if(quantity < 2) return
             if (product) {
                 product.quantity = quantity - 1;
                 toast.success('remove one items of your product!.')
