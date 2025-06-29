@@ -1,19 +1,21 @@
 import { useQuery } from '@tanstack/react-query'
 import axiosInstance from '../config/axios.config'
+import type { AxiosRequestConfig } from 'axios'
 
 interface IProps {
     queryKey: string[],
     url: string,
-    // config: 
+    config?: AxiosRequestConfig;
 }
-const CustomHook = ({ queryKey, url }: IProps) => {
+const CustomHook = ({ queryKey, url, config }: IProps) => {
     return (
         useQuery({
             queryKey,
             queryFn: async () => {
-                const response = await axiosInstance.get(url)
+                const response = await axiosInstance.get(url, config);
                 return response.data
-            }
+            },
+            staleTime: 1000 * 20,
         })
     )
 }
