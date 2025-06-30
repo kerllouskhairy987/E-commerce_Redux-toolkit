@@ -23,6 +23,7 @@ const Pagination = ({ page, setPage, totalPages }: IProps) => {
                 <Button
                     type="button"
                     className={`bg-green-500 w-28 ${page === totalPages ? "opacity-50 cursor-not-allowed" : "opacity-100 cursor-pointer"}`}
+                    disabled={page === totalPages ? true : false}
                     onClick={() => setPage((prev) => Math.min(prev + 1, 20))}
                 >
                     Next

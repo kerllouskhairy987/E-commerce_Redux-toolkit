@@ -15,7 +15,8 @@ const CustomHook = ({ queryKey, url, config }: IProps) => {
                 const response = await axiosInstance.get(url, config);
                 return response.data
             },
-            staleTime: 1000 * 20,
+            staleTime: 1000 * 60 * 1,
+            refetchInterval: 1000 * 60 * 2,
         })
     )
 }
